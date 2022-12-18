@@ -6,8 +6,18 @@ body {
 }
 
 h1 {
+    font-size: x-large;
     margin: 0;
     padding: 0;
+}
+
+#size {
+    /* align-self: flex-end; */
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bolder;
+    /* border-style: none; */
+    background-color: blueviolet;
 }
 
 #grid-container {

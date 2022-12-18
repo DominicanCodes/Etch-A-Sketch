@@ -1,6 +1,8 @@
-SIZE = 16 * 16
+let SIZE = 16
+let user_size = null
 
 function displayGraph(size=SIZE) {
+    size = size**2
     const area = document.querySelector("#grid-container")
     for (i=0;i<size;i++) {
         const cell = document.createElement("div")
@@ -10,5 +12,23 @@ function displayGraph(size=SIZE) {
         area.appendChild(cell)
     }
 }
+
+function clearGraph() {
+    const area = document.querySelector("#grid-container")
+    console.log(area.childElementCount)
+    for (i=area.childElementCount;i>0;i--) {
+        console.log('C:' + area.lastChild)
+        area.removeChild(area.lastChild)
+    }
+}
+
+document.querySelector('#size').addEventListener('click', (e) => {
+    user_size = prompt('Enter a number between 1 and 100: ')
+    if (user_size > 0 && user_size < 101) {
+        clearGraph()
+        displayGraph(user_size)
+    } else
+        alert('Invalid number.')
+})
 
 displayGraph()
