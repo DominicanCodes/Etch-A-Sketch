@@ -2,8 +2,9 @@ let SIZE = 16
 let user_size = null
 
 function displayGraph(size=SIZE) {
+    const area = document.querySelector("#grid-container");
+    area.style.gridTemplateColumns = "repeat("+size+", 1fr)";
     size = size**2
-    const area = document.querySelector("#grid-container")
     for (i=0;i<size;i++) {
         const cell = document.createElement("div")
         cell.textContent = i + 1
@@ -15,7 +16,6 @@ function displayGraph(size=SIZE) {
 
 function clearGraph() {
     const area = document.querySelector("#grid-container")
-    console.log(area.childElementCount)
     for (i=area.childElementCount;i>0;i--) {
         console.log('C:' + area.lastChild)
         area.removeChild(area.lastChild)

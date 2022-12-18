@@ -21,10 +21,9 @@ h1 {
 }
 
 #grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 600px;
-    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    margin: auto;
 }
 
 .cell {
