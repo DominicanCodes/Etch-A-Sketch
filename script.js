@@ -17,22 +17,16 @@ function displayGraph(size=SIZE) {
 
 function clearGraph() {
     const area = document.querySelector("#grid-container")
+    deleted = area.childElementCount
     for (i=area.childElementCount;i>0;i--) {
         // console.log('C:' + area.lastChild)
         area.removeChild(area.lastChild)
     }
+
+    return deleted
 }
 
 function play() {
-
-    document.querySelector('#size').addEventListener('click', (e) => {
-        user_size = prompt('Enter a number between 1 and 100: ')
-        if (user_size > 0 && user_size < 101) {
-            clearGraph()
-            displayGraph(user_size)
-        } else
-            alert('Invalid number.')
-    })
 
     const cells = document.querySelectorAll('.cell')
 
@@ -47,5 +41,18 @@ function play() {
     })
 }
 
+document.querySelector('#size').addEventListener('click', (e) => {
+    user_size = prompt('Enter a number between 1 and 100: ')
+    if (user_size > 0 && user_size < 101) {
+        clearGraph()
+        displayGraph(user_size)
+    } else
+        alert('Invalid number.')
+})
+
+document.querySelector('#clear').addEventListener('click', (e) => {
+    previous_board = clearGraph()
+    displayGraph(Math.sqrt(previous_board))
+})
 
 displayGraph()

@@ -11,13 +11,18 @@ h1 {
     padding: 0;
 }
 
-#size {
+button {
     /* align-self: flex-end; */
     margin: 5px;
     border-radius: 5px;
     font-weight: bolder;
     /* border-style: none; */
     background-color: blueviolet;
+}
+
+#controls {
+    display: flex;
+    gap: 16px;
 }
 
 #grid-container {
@@ -30,9 +35,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-style: solid;
+    border-width: 1px;
     user-select: none;
 }
 
