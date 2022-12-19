@@ -22,7 +22,14 @@ button {
 
 #controls {
     display: flex;
-    /* gap: 8px; */
+    gap: 10px;
+}
+
+#color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #grid-container {
@@ -43,8 +50,4 @@ button {
     border-style: solid;
     border-width: 1px;
     user-select: none;
-}
-
-.cell:hover {
-    background-color: blueviolet;
 }
