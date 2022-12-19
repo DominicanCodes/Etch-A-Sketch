@@ -7,7 +7,7 @@ function displayGraph(size=SIZE) {
     size = size**2
     for (i=0;i<size;i++) {
         const cell = document.createElement("div")
-        cell.textContent = i + 1
+        // cell.textContent = i + 1
         // cell.id = i + 1
         cell.classList = 'cell'
         area.appendChild(cell)
@@ -18,7 +18,7 @@ function displayGraph(size=SIZE) {
 function clearGraph() {
     const area = document.querySelector("#grid-container")
     for (i=area.childElementCount;i>0;i--) {
-        console.log('C:' + area.lastChild)
+        // console.log('C:' + area.lastChild)
         area.removeChild(area.lastChild)
     }
 }
@@ -39,7 +39,7 @@ function play() {
     // console.log(cells)
     cells.forEach((cell) => {
         cell.addEventListener('mouseover', () => {
-            if (cell.style.background != 'white')
+            if (cell.style.background != 'blueviolet')
                 cell.style.background = 'blueviolet'
             else
                 cell.style.background = 'white'
