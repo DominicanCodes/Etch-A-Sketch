@@ -12,6 +12,7 @@ function displayGraph(size=SIZE) {
         cell.classList = 'cell'
         area.appendChild(cell)
     }
+    play()
 }
 
 function clearGraph() {
@@ -22,13 +23,29 @@ function clearGraph() {
     }
 }
 
-document.querySelector('#size').addEventListener('click', (e) => {
-    user_size = prompt('Enter a number between 1 and 100: ')
-    if (user_size > 0 && user_size < 101) {
-        clearGraph()
-        displayGraph(user_size)
-    } else
-        alert('Invalid number.')
-})
+function play() {
+
+    document.querySelector('#size').addEventListener('click', (e) => {
+        user_size = prompt('Enter a number between 1 and 100: ')
+        if (user_size > 0 && user_size < 101) {
+            clearGraph()
+            displayGraph(user_size)
+        } else
+            alert('Invalid number.')
+    })
+
+    const cells = document.querySelectorAll('.cell')
+
+    // console.log(cells)
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            if (cell.style.background != 'white')
+                cell.style.background = 'blueviolet'
+            else
+                cell.style.background = 'white'
+        })
+    })
+}
+
 
 displayGraph()
